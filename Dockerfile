@@ -35,7 +35,7 @@ RUN pip --no-cache-dir install --upgrade \
         sklearn-pandas
 
 # Open Ports for Jupyter
-EXPOSE 7745
+EXPOSE 8070
 
 #Setup File System
 RUN mkdir ds
@@ -43,8 +43,8 @@ ENV HOME=/ds
 ENV SHELL=/bin/bash
 VOLUME /ds
 WORKDIR /ds
-ADD run_jupyter.sh /ds/run_jupyter.sh
-RUN chmod +x /ds/run_jupyter.sh
+# ADD run_jupyter.sh /ds/run_jupyter.sh
+# RUN chmod +x /ds/run_jupyter.sh
 
 # Run a shell script
-CMD  ["./run_jupyter.sh"]
+CMD  ["/bin/bash"]
